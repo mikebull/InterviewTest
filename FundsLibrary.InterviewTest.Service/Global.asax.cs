@@ -1,8 +1,8 @@
-﻿using System.Web;
+﻿using Castle.Windsor;
+using Castle.Windsor.Installer;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Dispatcher;
-using Castle.Windsor;
-using Castle.Windsor.Installer;
 
 namespace FundsLibrary.InterviewTest.Service
 {

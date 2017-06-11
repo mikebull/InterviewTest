@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Castle.Windsor;
+using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Castle.Windsor;
 
 namespace FundsLibrary.InterviewTest.Web
 {

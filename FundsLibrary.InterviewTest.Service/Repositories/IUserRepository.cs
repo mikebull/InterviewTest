@@ -1,7 +1,7 @@
-﻿using System;
+﻿using FundsLibrary.InterviewTest.Common;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using FundsLibrary.InterviewTest.Common;
 
 namespace FundsLibrary.InterviewTest.Service.Repositories
 {

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using FundsLibrary.InterviewTest.Common;
+using FundsLibrary.InterviewTest.Web.Repositories;
+using PagedList;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using FundsLibrary.InterviewTest.Common;
-using FundsLibrary.InterviewTest.Web.Repositories;
-using PagedList;
 
 namespace FundsLibrary.InterviewTest.Web.Controllers
 {

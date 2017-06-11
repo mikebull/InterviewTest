@@ -1,12 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using FundsLibrary.InterviewTest.Common;
+﻿using FundsLibrary.InterviewTest.Common;
 using FundsLibrary.InterviewTest.Web.Models;
 using FundsLibrary.InterviewTest.Web.Services;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using System;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
 
 namespace FundsLibrary.InterviewTest.Web.Controllers
 {

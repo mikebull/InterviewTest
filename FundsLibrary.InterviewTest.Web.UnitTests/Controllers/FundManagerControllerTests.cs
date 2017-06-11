@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Web.Mvc;
-using FundsLibrary.InterviewTest.Common;
+﻿using FundsLibrary.InterviewTest.Common;
 using FundsLibrary.InterviewTest.Web.Controllers;
 using FundsLibrary.InterviewTest.Web.Repositories;
 using Moq;
 using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace FundsLibrary.InterviewTest.Web.UnitTests.Controllers
 {

@@ -1,8 +1,8 @@
-using System;
-using System.Web;
 using FundsLibrary.InterviewTest.Common;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using System;
+using System.Web;
 
 namespace FundsLibrary.InterviewTest.Web.Services
 {

@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using FundsLibrary.InterviewTest.Web.Repositories;
+using System.Threading.Tasks;
 using System.Web.Mvc;
-using FundsLibrary.InterviewTest.Web.Repositories;
 
 namespace FundsLibrary.InterviewTest.Web.Controllers
 {

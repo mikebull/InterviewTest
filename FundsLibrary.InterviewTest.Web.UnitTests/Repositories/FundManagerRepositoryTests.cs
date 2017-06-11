@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FundsLibrary.InterviewTest.Common;
+﻿using FundsLibrary.InterviewTest.Common;
 using FundsLibrary.InterviewTest.Web.Repositories;
 using Moq;
 using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FundsLibrary.InterviewTest.Web.UnitTests.Repositories
 {

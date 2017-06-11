@@ -1,8 +1,8 @@
-﻿using System;
+﻿using FundsLibrary.InterviewTest.Common;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FundsLibrary.InterviewTest.Common;
-using Microsoft.AspNet.Identity;
 
 namespace FundsLibrary.InterviewTest.Web.Repositories
 {

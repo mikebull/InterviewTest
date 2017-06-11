@@ -1,9 +1,9 @@
-﻿using System;
+﻿using FundsLibrary.InterviewTest.Common;
+using FundsLibrary.InterviewTest.Service.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
-using FundsLibrary.InterviewTest.Common;
-using FundsLibrary.InterviewTest.Service.Repositories;
 
 namespace FundsLibrary.InterviewTest.Service.Controllers
 {

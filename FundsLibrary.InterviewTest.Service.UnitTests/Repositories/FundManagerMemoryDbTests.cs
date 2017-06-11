@@ -1,9 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using FundsLibrary.InterviewTest.Common;
+﻿using FundsLibrary.InterviewTest.Common;
 using FundsLibrary.InterviewTest.Service.Repositories;
 using NUnit.Framework;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FundsLibrary.InterviewTest.Service.UnitTests.Repositories
 {
