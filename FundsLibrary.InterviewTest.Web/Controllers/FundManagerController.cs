@@ -13,9 +13,12 @@ namespace FundsLibrary.InterviewTest.Web.Controllers
     {
         private readonly IFundManagerRepository _repository;
 
-        public FundManagerController(IFundManagerRepository repository)
+        private readonly ISecuritiesRepository _securitiesRepository;
+
+        public FundManagerController(IFundManagerRepository repository, ISecuritiesRepository securitiesRepository)
         {
             _repository = repository;
+            _securitiesRepository = securitiesRepository;
         }
 
         [AllowAnonymous]
@@ -46,6 +49,7 @@ namespace FundsLibrary.InterviewTest.Web.Controllers
 
             var pageNumber = page ?? 1;
             const int pageSize = 3;
+
             return View(fundManagersList.ToPagedList(pageNumber, pageSize));
         }
 
@@ -62,6 +66,11 @@ namespace FundsLibrary.InterviewTest.Web.Controllers
             {
                 return _UnverifiedFundManagerId($"The Fund Manager id {id.Value} was not found");
             }
+
+            var funds = await _securitiesRepository.GetFunds(result.Id);
+            
+            result.Funds = funds;
+            
             return View(result);
         }
 

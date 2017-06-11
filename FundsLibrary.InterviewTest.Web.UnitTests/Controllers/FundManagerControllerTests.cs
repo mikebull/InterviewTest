@@ -21,7 +21,14 @@ namespace FundsLibrary.InterviewTest.Web.UnitTests.Controllers
             mock.Setup(m => m.GetAll())
                 .Returns(Task.FromResult(fundManagerModels))
                 .Verifiable();
-            var controller = new FundManagerController(mock.Object);
+
+            var mock2 = new Mock<ISecuritiesRepository>();
+            IEnumerable<Fund> fundModels = new List<Fund>();
+            mock2.Setup(m => m.GetFunds(new Guid()))
+                .Returns(Task.FromResult(fundModels))
+                .Verifiable();
+
+            var controller = new FundManagerController(mock.Object, mock2.Object);
 
             //Act
             var result = await controller.Index();
@@ -42,7 +49,14 @@ namespace FundsLibrary.InterviewTest.Web.UnitTests.Controllers
             mock.Setup(m => m.Get(guid))
                 .Returns(Task.FromResult(fundManagerModel))
                 .Verifiable();
-            var controller = new FundManagerController(mock.Object);
+
+            var mock2 = new Mock<ISecuritiesRepository>();
+            IEnumerable<Fund> fundModels = new List<Fund>();
+            mock2.Setup(m => m.GetFunds(new Guid()))
+                .Returns(Task.FromResult(fundModels))
+                .Verifiable();
+
+            var controller = new FundManagerController(mock.Object, mock2.Object);
 
             //Act
             var result = await controller.Details(guid);
@@ -60,7 +74,14 @@ namespace FundsLibrary.InterviewTest.Web.UnitTests.Controllers
             var fundManagerModel = new FundManager();
             mock.SetupAllProperties();
             mock.Setup(m => m.Get(guid)).Returns(Task.FromResult(fundManagerModel));
-            var controller = new FundManagerController(mock.Object);
+
+            var mock2 = new Mock<ISecuritiesRepository>();
+            IEnumerable<Fund> fundModels = new List<Fund>();
+            mock2.Setup(m => m.GetFunds(new Guid()))
+                .Returns(Task.FromResult(fundModels))
+                .Verifiable();
+
+            var controller = new FundManagerController(mock.Object, mock2.Object);
 
             var result = await controller.Edit(guid);
 
@@ -77,7 +98,14 @@ namespace FundsLibrary.InterviewTest.Web.UnitTests.Controllers
             var fundManagerModel = new FundManager();
             mock.SetupAllProperties();
             mock.Setup(m => m.Get(validGuid)).Returns(Task.FromResult(fundManagerModel));
-            var controller = new FundManagerController(mock.Object);
+
+            var mock2 = new Mock<ISecuritiesRepository>();
+            IEnumerable<Fund> fundModels = new List<Fund>();
+            mock2.Setup(m => m.GetFunds(new Guid()))
+                .Returns(Task.FromResult(fundModels))
+                .Verifiable();
+
+            var controller = new FundManagerController(mock.Object, mock2.Object);
 
             var result = await controller.Edit((Guid?)null);
 
@@ -92,7 +120,14 @@ namespace FundsLibrary.InterviewTest.Web.UnitTests.Controllers
             var mock = new Mock<IFundManagerRepository>();
             mock.SetupAllProperties();
             mock.Setup(m => m.Delete(validGuid)).Returns(Task.FromResult(true));
-            var controller = new FundManagerController(mock.Object);
+
+            var mock2 = new Mock<ISecuritiesRepository>();
+            IEnumerable<Fund> fundModels = new List<Fund>();
+            mock2.Setup(m => m.GetFunds(new Guid()))
+                .Returns(Task.FromResult(fundModels))
+                .Verifiable();
+
+            var controller = new FundManagerController(mock.Object, mock2.Object);
 
             var result = await controller.Delete(validGuid);
 
@@ -108,7 +143,14 @@ namespace FundsLibrary.InterviewTest.Web.UnitTests.Controllers
             var fundManagerModel = new FundManager();
             mock.SetupAllProperties();
             mock.Setup(m => m.Get(validGuid)).Returns(Task.FromResult(fundManagerModel));
-            var controller = new FundManagerController(mock.Object);
+
+            var mock2 = new Mock<ISecuritiesRepository>();
+            IEnumerable<Fund> fundModels = new List<Fund>();
+            mock2.Setup(m => m.GetFunds(new Guid()))
+                .Returns(Task.FromResult(fundModels))
+                .Verifiable();
+
+            var controller = new FundManagerController(mock.Object, mock2.Object);
 
             var result = await controller.Delete(null);
 
