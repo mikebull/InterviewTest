@@ -1,4 +1,5 @@
 ﻿using FundsLibrary.InterviewTest.Common.Domain;
+using Simple.OData.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,33 @@ namespace FundsLibrary.InterviewTest.Web.Repositories
             _authToken = authToken;
         }
 
-        public Task<IEnumerable<Security>> GetFundsForManager(Guid managerGuid)
+        public async Task<IEnumerable<Security>> GetFundsForManager(Guid managerGuid)
         {
-            throw new NotImplementedException();
+            var settings = new ODataClientSettings
+            {
+                BaseUri = new Uri(_serviceAppUrl),
+                OnTrace = (format, args) => Console.WriteLine(String.Format(format, args)),
+                IgnoreUnmappedProperties = true
+            };
+
+            settings.BeforeRequest = (message) =>
+            {
+                message.Headers.Add("Authorization",
+                    "Bearer " + _authToken);
+                message.Headers.Add("Accept", 
+                    "application/json");
+            };
+
+            var client = new ODataClient(settings);
+
+            var annotations = new ODataFeedAnnotations();
+            
+            var teamMembers = await client
+                .For<Security>()
+                .Search($"{managerGuid}")
+                .FindEntriesAsync();
+                                        
+            return teamMembers;
         }
     }
 }

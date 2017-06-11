@@ -21,9 +21,33 @@ namespace FundsLibrary.InterviewTest.Web.Repositories
             _client = client;
         }
 
-        public Task<IEnumerable<Fund>> GetFunds(Guid managerGuid)
+        public async Task<IEnumerable<Fund>> GetFunds(Guid managerGuid)
         {
-            throw new NotImplementedException();
+            var securities = await _client.GetFundsForManager(managerGuid);
+
+            var funds = new List<Fund>();
+
+            foreach (var security in securities)
+            {
+                var staticData = security.StaticData;
+
+                var identification = staticData.Identification;
+                var essentials = staticData.Essentials;
+
+                if (identification != null && essentials != null)
+                {
+                    funds.Add(new Fund
+                    {
+                        IsinCode = identification.IsinCode,
+                        FullName = identification.FullName,
+                        IASector = essentials.IaSector,
+                        Objectives = essentials.Objectives,
+                        BenchmarkDescription = essentials.BenchmarkDescription
+                    });
+                }
+            }
+
+            return funds;
         }
     }
 }

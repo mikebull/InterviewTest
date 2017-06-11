@@ -33,12 +33,48 @@
         </dd>
     </dl>
 </div>
+@if (Model.Funds.Any())
+{
+    <div class="fund-manager-details">
+        <h2>Funds Managed</h2>
+        @foreach (var fund in Model.Funds)
+        {
+            <h3>@Html.DisplayFor(model => fund.FullName)</h3>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => fund.IsinCode)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => fund.IsinCode)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => fund.IASector)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => fund.IASector)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => fund.BenchmarkDescription)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => fund.BenchmarkDescription)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => fund.Objectives)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => fund.Objectives)
+                </dd>
+            </dl>
+        }
+    </div>
+}
 <div class="row">
     @Html.ActionLink("Back", "Index", null, new { @class = "btn btn-default col-sm-1" })
     <span class="col-sm-4"></span>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-success col-sm-1" })
 </div>
-<br/>
+<br />
 <div class="row">
     <span class="col-sm-5"></span>
     @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger col-sm-1" })
